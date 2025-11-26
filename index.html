@@ -14,7 +14,7 @@
   <textarea readonly rows="2">import time
 x='';n=int(time.time()*100);exec("while n:x=chr(97+n%26)+x;n//=26")</textarea>
 
-  <textarea readonly rows="2">const x=((f)=>f(f,Math.floor(Date.now()/10)))((s,n)=>n<26?String.fromCharCode(97+n%26):s(s,Math.floor(n/26))+String.fromCharCode(97+n%26));</textarea>
+  <textarea readonly rows="2">for(x='',n=new Date/10,n-=n%1;n;n=(n-n%26)/26)x=String.fromCharCode(97+n%26)+x</textarea>
 
   <script src="script.js"></script>
 </body>
