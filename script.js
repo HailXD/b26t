@@ -1,7 +1,7 @@
 let isCopied = false;
 
 function updateOutput() {
-  const x = (f => f(f, Math.floor(Date.now() / 10)))((f, n) => n < 26 ? (n + 10).toString(36) : f(f, Math.floor(n / 26)) + (n % 26 + 10).toString(36));
+  const x=parseInt(Date.now()/10).toString(26).replace(/./g,c=>(parseInt(c,26)+10).toString(36));
 
   const outputElement = document.getElementById('output').querySelector('span');
   outputElement.textContent = x;
