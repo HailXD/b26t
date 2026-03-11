@@ -12,7 +12,7 @@
   <div id="output"><span></span></div>
 
   <textarea readonly rows="2">import time
-n=int(time.time()*100);x=(f:=lambda n:n<26 and chr(n+97)or f(n//26)+chr(n%26+97))(n)</textarea>
+x=(lambda f:f(f,int(time.time()*100)))(lambda f,n:n<26and chr(n+97)or f(f,n//26)+chr(n%26+97))</textarea>
 
   <textarea readonly rows="2">const x=(f=>f(f,Math.floor(Date.now()/10)))((f,n)=>n<26?(n+10).toString(36):f(f,Math.floor(n/26))+(n%26+10).toString(36));</textarea>
 
