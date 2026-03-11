@@ -12,9 +12,9 @@
   <div id="output"><span></span></div>
 
   <textarea readonly rows="2">import time
-x='';n=int(time.time()*100);exec("while n:x=chr(97+n%26)+x;n//=26")</textarea>
+n=int(time.time()*100);x=(f:=lambda n:n<26 and chr(n+97)or f(n//26)+chr(n%26+97))(n)</textarea>
 
-  <textarea readonly rows="2">const x = ((n,s="") => (n=Math.floor(n), n ? (s=String.fromCharCode(97+n%26)+s, n=Math.floor(n/26), arguments.callee(n,s)) : s))(Date.now()/10);</textarea>
+  <textarea readonly rows="2">const x=(f=>f(f,Math.floor(Date.now()/10)))((f,n)=>n<26?(n+10).toString(36):f(f,Math.floor(n/26))+(n%26+10).toString(36));</textarea>
 
   <script src="script.js"></script>
 </body>

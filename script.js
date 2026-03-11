@@ -1,7 +1,7 @@
 let isCopied = false;
 
 function updateOutput() {
-  const x=(f=>f(f,Math.floor(Date.now()/10)))( (s,n)=>n===0?"a":n<26?"abcdefghijklmnopqrstuvwxyz"[n]:s(s,Math.floor(n/26))+"abcdefghijklmnopqrstuvwxyz"[n%26]);
+  const x = (f => f(f, Math.floor(Date.now() / 10)))((f, n) => n < 26 ? (n + 10).toString(36) : f(f, Math.floor(n / 26)) + (n % 26 + 10).toString(36));
 
   const outputElement = document.getElementById('output').querySelector('span');
   outputElement.textContent = x;
